@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Navbar, Card, Container, CardBody, Col, Row } from 'reactstrap';
+import {Card,CardBody} from 'reactstrap';
 
 class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            username: "",
-        }
     }
     render() {
         return (

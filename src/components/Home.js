@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import { Navbar, Card, Container, CardBody, Col, Row, Button, Form, Input } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import {Card, Container, CardBody, Col, Row, Button, Form, Input } from 'reactstrap';
 import '../css/home.css';
-import Logo from '../assets/img/logo.png';
-import Hero from '../assets/img/hero.jpg';
+import Header from './Header';
+import Footer from './Footer';
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            username: "",
-        }
     }
     render() {
         return (
             <div>
+                <Header/>
                 <section>
                     <div className="hero-head">
                         {/* <img src={Hero}></img> */}
@@ -114,6 +111,7 @@ class Home extends Component {
                         </CardBody>
                     </Card>
                 </section>
+                <Footer/>
             </div >
         )
     }

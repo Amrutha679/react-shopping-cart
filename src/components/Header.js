@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { Navbar, Card, Container, CardBody,Button } from 'reactstrap';
+import {Button } from 'reactstrap';
 import Logo from '../assets/img/logo.png';
+import {withRouter} from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            username: "",
-        }
+        this.handleClick = this.handleClick.bind(this);
     }
+    handleClick() {
+        this.props.history.push('/login');
+      }
     render() {
         return (
             <div>
@@ -20,8 +22,7 @@ class Header extends Component {
                             <li><a href='/products'>Products</a></li>
                             <li><a href='/contact'>Contact Us</a></li>
                             <li><a href='/about'>About Us</a></li>
-                            <button type="submit" style={{ marginLeft: "100px", width: "100px", height: "35px" }}>Login</button>
-                            <Button className="primary" style={{ marginLeft: "20px" }}>Cart</Button>
+                            <Button onClick= {this.handleClick} className="primary" style={{ marginLeft: "20px" }}>Logout</Button>
                         </ul>
                     </div>
                 </header>
@@ -30,4 +31,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default withRouter(Header);
